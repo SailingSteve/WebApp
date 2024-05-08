@@ -625,7 +625,6 @@ class CampaignsHome extends Component {
       searchingJustStarted = true;
     }
     const isSearching = (isString(searchText) && searchText.length > 0);
-    console.log('CampaignsHome isSearching : ', isSearching);
     this.setState({
       isSearching,
       listModeShown: searchingJustStarted ? '' : listModeShown,
