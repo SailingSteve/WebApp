@@ -8,8 +8,8 @@ import { renderLog } from '../../common/utils/logging';
 import SearchBar from '../Search/SearchBar';
 import BallotItemSearchResult from './BallotItemSearchResult';
 
-const thumbUpIcon = '../../../img/global/svg-icons/thumbs-up-icon.svg';
-const thumbDownIcon = '../../../img/global/svg-icons/thumbs-down-icon.svg';
+const thumbUpIcon = normalizedImagePath('../../../img/global/svg-icons/thumbs-up-icon.svg');
+const thumbDownIcon = normalizedImagePath('../../../img/global/svg-icons/thumbs-down-icon.svg');
 
 
 export default class BallotSearchResults extends Component {

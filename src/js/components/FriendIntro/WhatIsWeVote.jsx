@@ -12,8 +12,8 @@ import normalizedImagePath from '../../common/utils/normalizedImagePath';
 
 const FAQModal = React.lazy(() => import(/* webpackChunkName: 'FAQModal' */ './FAQModal'));
 
-const logoGrey = '../../../img/global/svg-icons/we-vote-icon-square-color-grey.svg';
-const voteFlag = '../../../img/get-started/your-vote-counts-cropped-200x200.gif';
+const logoGrey = normalizedImagePath('../../../img/global/svg-icons/we-vote-icon-square-color-grey.svg');
+const voteFlag = normalizedImagePath('../../../img/get-started/your-vote-counts-cropped-200x200.gif');
 
 class WhatIsWeVote extends Component {
   constructor (props) {

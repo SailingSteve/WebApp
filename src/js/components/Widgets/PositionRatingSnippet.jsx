@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import normalizedImagePath from '../../common/utils/normalizedImagePath';
 import { renderLog } from '../../common/utils/logging';
 
-const upArrowColorIcon = '../../../img/global/icons/up-arrow-color-icon.svg';
-const downArrowColorIcon = '../../../img/global/icons/down-arrow-color-icon.svg';
-const mixedRatingIcon = '../../../img/global/icons/mixed-rating-icon.svg';
+const upArrowColorIcon = normalizedImagePath('../../../img/global/icons/up-arrow-color-icon.svg');
+const downArrowColorIcon = normalizedImagePath('../../../img/global/icons/down-arrow-color-icon.svg');
+const mixedRatingIcon = normalizedImagePath('../../../img/global/icons/mixed-rating-icon.svg');
 
 export default class PositionRatingSnippet extends Component {
   render () {

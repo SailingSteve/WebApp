@@ -8,8 +8,8 @@ import isMobileScreenSize from '../../common/utils/isMobileScreenSize';
 import { renderLog } from '../../common/utils/logging';
 import normalizedImagePath from '../../common/utils/normalizedImagePath';
 
-const groupIcon = '../../../img/global/svg-icons/group-icon.svg';
-const publicIcon = '../../../img/global/svg-icons/public-icon.svg';
+const groupIcon = normalizedImagePath('../../../img/global/svg-icons/group-icon.svg');
+const publicIcon = normalizedImagePath('../../../img/global/svg-icons/public-icon.svg');
 
 
 export default function FriendsOnlyIndicator ({ isFriendsOnlyIncoming }) {

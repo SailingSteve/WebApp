@@ -8,8 +8,8 @@ import { vimeoRegX, youTubeRegX } from '../../common/utils/textFormat';
 const ReadMore = React.lazy(() => import(/* webpackChunkName: 'ReadMore' */ '../../common/components/Widgets/ReadMore'));
 const ReactPlayer = React.lazy(() => import(/* webpackChunkName: 'ReactPlayer' */ 'react-player'));
 const OpenExternalWebSite = React.lazy(() => import(/* webpackChunkName: 'OpenExternalWebSite' */ '../../common/components/Widgets/OpenExternalWebSite'));
-const thumbsUpColorIcon = '../../../img/global/svg-icons/thumbs-up-color-icon.svg';
-const thumbsDownColorIcon = '../../../img/global/svg-icons/thumbs-down-color-icon.svg';
+const thumbsUpColorIcon = normalizedImagePath('../../../img/global/svg-icons/thumbs-up-color-icon.svg');
+const thumbsDownColorIcon = normalizedImagePath('../../../img/global/svg-icons/thumbs-down-color-icon.svg');
 
 export default class PositionSupportOpposeSnippet extends Component {
   render () {

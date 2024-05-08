@@ -33,7 +33,7 @@ const SetUpAccountFriendRequests = React.lazy(() => import(/* webpackChunkName: 
 const SetUpAccountImportContacts = React.lazy(() => import(/* webpackChunkName: 'SetUpAccountImportContacts' */ '../../components/SetUpAccount/SetUpAccountImportContacts'));
 const SetUpAccountInviteContacts = React.lazy(() => import(/* webpackChunkName: 'SetUpAccountInviteContacts' */ '../../components/SetUpAccount/SetUpAccountInviteContacts'));
 
-const logoColorOnWhite = '../../../img/global/svg-icons/we-vote-icon-square-color-dark.svg';
+const logoColorOnWhite = normalizedImagePath('../../../img/global/svg-icons/we-vote-icon-square-color-dark.svg');
 
 
 class SetUpAccountRoot extends React.Component {

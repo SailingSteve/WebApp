@@ -13,7 +13,7 @@ const OpenExternalWebSite = React.lazy(() => import(/* webpackChunkName: 'OpenEx
 const ReactPlayer = React.lazy(() => import(/* webpackChunkName: 'ReactPlayer' */ 'react-player'));
 const ReadMore = React.lazy(() => import(/* webpackChunkName: 'ReadMore' */ '../../common/components/Widgets/ReadMore'));
 
-const noPositionIcon = '../../../img/global/svg-icons/no-position-icon.svg';
+const noPositionIcon = normalizedImagePath('../../../img/global/svg-icons/no-position-icon.svg');
 
 
 export default class PositionInformationOnlySnippet extends Component {

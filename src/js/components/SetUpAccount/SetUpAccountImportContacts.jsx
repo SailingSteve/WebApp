@@ -14,7 +14,7 @@ import {
   StepCenteredWrapper,
 } from '../Style/SetUpAccountStyles';
 
-const addressBookSVG = '../../../img/get-started/address-book.svg';
+const addressBookSVG = normalizedImagePath('../../../img/get-started/address-book.svg');
 
 class SetUpAccountImportContacts extends React.Component {
   constructor (props) {

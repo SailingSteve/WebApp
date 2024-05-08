@@ -10,6 +10,7 @@ import { openSnackbar } from '../../common/components/Widgets/SnackNotifier';
 import { cordovaOpenSafariView, hasDynamicIsland, hasIPhoneNotch, isIPhone6p5in } from '../../common/utils/cordovaUtils';
 import { normalizedHref } from '../../common/utils/hrefUtils';
 import { isAndroid, isCordova, isWebApp } from '../../common/utils/isCordovaOrWebApp';
+import normalizedImagePath from '../../common/utils/normalizedImagePath';
 import VoterStore from '../../stores/VoterStore';
 import ShareModalOption from './ShareModalOption';
 
@@ -347,10 +348,11 @@ CopyLink.propTypes = {
 // React functional component example
 export function ShareWeVoteFriends (props) {
   const { onClickFunction } = props;
+  const imgSvg = normalizedImagePath('../../../img/global/svg-icons/we-vote-icon-square-color.svg');
   return (
     <ShareModalOption
       backgroundColor="#0834cd"
-      icon={<img src="../../../img/global/svg-icons/we-vote-icon-square-color.svg" alt="" />}
+      icon={<img src={imgSvg} alt="" />}
       // urlToShare={linkToBeShared}
       noLink
       onClickFunction={onClickFunction}

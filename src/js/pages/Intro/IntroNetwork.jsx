@@ -10,7 +10,7 @@ import IntroNetworkBallotIsNext from '../../components/Intro/IntroNetworkBallotI
 import IntroNetworkDefinition from '../../components/Intro/IntroNetworkDefinition';
 import IntroNetworkSafety from '../../components/Intro/IntroNetworkSafety';
 
-const closeIcon = '../../../img/global/icons/x-close.png';
+const closeIcon = normalizedImagePath('../../../img/global/icons/x-close.png');
 
 
 export default class IntroNetwork extends Component {

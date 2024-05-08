@@ -15,14 +15,15 @@ import apiCalming from '../common/utils/apiCalming';
 import { formatDateToMonthDayYear } from '../common/utils/dateFormat';
 import { formatStateName } from '../common/utils/formatStateName';
 import { renderLog } from '../common/utils/logging';
+import normalizedImagePath from '../common/utils/normalizedImagePath';
 import StateDropDownCore from '../components/Filter/StateDropDownCore';
 import { PageContentContainer } from '../components/Style/pageLayoutStyles';
 import BrowserPushMessage from '../components/Widgets/BrowserPushMessage';
 import BallotStore from '../stores/BallotStore';
 import VoterStore from '../stores/VoterStore';
 
-const voteDotOrg = '../../img/global/logos/vote_dot_org_logo-530x200.png';
-const turboVote = '../../img/global/logos/turbovote-logo.png';
+const voteDotOrg = normalizedImagePath('../../img/global/logos/vote_dot_org_logo-530x200.png');
+const turboVote = normalizedImagePath('../../img/global/logos/turbovote-logo.png');
 
 /* Styled Input confuses lint in this case, so we disable */
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -194,12 +195,13 @@ class Register extends Component {
       </>
     );
 
+    const imgSvg = normalizedImagePath('../../../img/global/svg-icons/ready/register-100-percent.svg');
     const renderMajorStepB = () => (
       <Section>
         <h3 style={{ textAlign: 'center', fontSize: 28, fontWeight: 700, marginBottom: 0 }}>
           Congratulations, you&apos;re self-verified!
         </h3>
-        <img style={{ width: 100, margin: '32px auto', textAlign: 'center', display: 'block' }} src="../../../img/global/svg-icons/ready/register-100-percent.svg" alt="" />
+        <img style={{ width: 100, margin: '32px auto', textAlign: 'center', display: 'block' }} src={imgSvg} alt="" />
         <p style={{ textAlign: 'center' }}>
           Your registration freshness date is
           {' '}

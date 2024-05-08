@@ -22,7 +22,7 @@ import { renderLog } from '../../common/utils/logging';
 import apiCalming from '../../common/utils/apiCalming';
 import { sortCandidateList } from '../../utils/positionFunctions';
 
-const testimonialPhoto = '../../../img/global/photos/Dale_McGrew-48x48.jpg';
+const testimonialPhoto = normalizedImagePath('../../../img/global/photos/Dale_McGrew-48x48.jpg');
 
 
 // This is related to pages/VoterGuide/OrganizationVoterGuideOffice

@@ -13,7 +13,7 @@ import extractAttributeValueListFromObjectList from '../../common/utils/extractA
 import historyPush from '../../common/utils/historyPush';
 import { isAndroid } from '../../common/utils/isCordovaOrWebApp';
 import { renderLog } from '../../common/utils/logging';
-import { convertToInteger } from '../../common/utils/textFormat';
+import { isString, convertToInteger } from '../../common/utils/textFormat';
 import CampaignsHomeFilter from '../../components/CampaignsHome/CampaignsHomeFilter';
 import CandidateListRootPlaceholder from '../../components/CampaignsHome/CandidateListRootPlaceholder';
 import NoSearchResult from '../../components/Search/NoSearchResult';
@@ -624,7 +624,8 @@ class CampaignsHome extends Component {
     if (previousSearchText.length === 0 && searchText.length > 0) {
       searchingJustStarted = true;
     }
-    const isSearching = (searchText && searchText.length > 0);
+    const isSearching = (isString(searchText) && searchText.length > 0);
+    console.log('CampaignsHome isSearching : ', isSearching);
     this.setState({
       isSearching,
       listModeShown: searchingJustStarted ? '' : listModeShown,

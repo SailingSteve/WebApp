@@ -10,8 +10,8 @@ import normalizedImagePath from '../../common/utils/normalizedImagePath';
 
 const OpenExternalWebSite = React.lazy(() => import(/* webpackChunkName: 'OpenExternalWebSite' */ '../../common/components/Widgets/OpenExternalWebSite'));
 
-const appStoreIcon = '../../../img/global/logos/download_on_the_app_store_badge_us-uk_blk.svg';
-const googlePlayIcon = '../../../img/global/logos/google-play-badge-cropped.png';
+const appStoreIcon = normalizedImagePath('../../../img/global/logos/download_on_the_app_store_badge_us-uk_blk.svg');
+const googlePlayIcon = normalizedImagePath('../../../img/global/logos/google-play-badge-cropped.png');
 
 
 class WelcomeFooter extends Component {

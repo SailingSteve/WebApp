@@ -325,7 +325,7 @@ class AddFriendsByEmail extends Component {
                         name="incomingEmailsOrPhonesString"
                         onChange={this.cacheIncomingEmailsOrPhones}
                         onFocus={() => focusTextFieldAndroid('AddFriendsByEmail')}
-                        onBlur={blurTextFieldAndroid}
+                        onBlur={() => blurTextFieldAndroid('AddFriendsByEmail')}
                         placeholder="For example: name@domain.com"
                         type="text"
                         value={incomingEmailsOrPhonesString}
@@ -354,7 +354,7 @@ class AddFriendsByEmail extends Component {
                               value={friendFirstName}
                               onChange={this.cacheFirstName}
                               onFocus={() => focusTextFieldAndroid('AddFriendsByEmail')}
-                              onBlur={blurTextFieldAndroid}
+                              onBlur={() => blurTextFieldAndroid('AddFriendsByEmail')}
                               placeholder={isMobileScreenSize() || inSideColumn ? 'Optional' : 'Optional, but helpful!'}
                             />
                           </div>
@@ -370,7 +370,7 @@ class AddFriendsByEmail extends Component {
                               value={friendLastName}
                               onChange={this.cacheLastName}
                               onFocus={() => focusTextFieldAndroid('AddFriendsByEmail')}
-                              onBlur={blurTextFieldAndroid}
+                              onBlur={() => blurTextFieldAndroid('AddFriendsByEmail')}
                               placeholder="Optional"
                             />
                           </div>
@@ -390,7 +390,7 @@ class AddFriendsByEmail extends Component {
                             name="addFriendsMessage"
                             onChange={this.cacheAddFriendsByEmailMessage}
                             onFocus={() => focusTextFieldAndroid('AddFriendsByEmail')}
-                            onBlur={blurTextFieldAndroid}
+                            onBlur={() => blurTextFieldAndroid('AddFriendsByEmail')}
                             placeholder={messageToFriend}
                             type="text"
                             value={messageToFriend}

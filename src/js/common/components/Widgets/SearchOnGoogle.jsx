@@ -6,7 +6,7 @@ import normalizedImagePath from '../../utils/normalizedImagePath';
 
 const OpenExternalWebSite = React.lazy(() => import(/* webpackChunkName: 'OpenExternalWebSite' */ './OpenExternalWebSite'));
 
-const googleIcon = '../../../img/global/logos/google-icon.svg';
+const googleIcon = normalizedImagePath('../../../img/global/logos/google-icon.svg');
 
 
 class SearchOnGoogle extends Component {

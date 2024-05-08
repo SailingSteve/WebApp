@@ -16,7 +16,7 @@ import FriendsOnlyIndicator from '../Widgets/FriendsOnlyIndicator';
 
 const ReadMore = React.lazy(() => import(/* webpackChunkName: 'ReadMore' */ '../../common/components/Widgets/ReadMore'));
 const OpenExternalWebSite = React.lazy(() => import(/* webpackChunkName: 'OpenExternalWebSite' */ '../../common/components/Widgets/OpenExternalWebSite'));
-const avatarGenericIcon = '../../../img/global/svg-icons/avatar-generic.svg';
+const avatarGenericIcon = normalizedImagePath('../../../img/global/svg-icons/avatar-generic.svg');
 
 class ActivitySpeakerCard extends Component {
   constructor (props) {

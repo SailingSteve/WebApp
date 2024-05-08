@@ -44,7 +44,7 @@ const SetUpAccountImportContacts = React.lazy(() => import(/* webpackChunkName: 
 const SetUpAccountInviteContacts = React.lazy(() => import(/* webpackChunkName: 'SetUpAccountInviteContacts' */ '../../components/SetUpAccount/SetUpAccountInviteContacts'));
 const SetUpAccountInviteContactsSignIn = React.lazy(() => import(/* webpackChunkName: 'SetUpAccountInviteContactsSignIn' */ '../../components/SetUpAccount/SetUpAccountInviteContactsSignIn'));
 
-const logoColorOnWhite = '../../../img/global/svg-icons/we-vote-icon-square-color-dark.svg';
+const logoColorOnWhite = normalizedImagePath('../../../img/global/svg-icons/we-vote-icon-square-color-dark.svg');
 
 
 class FindFriendsRoot extends React.Component {

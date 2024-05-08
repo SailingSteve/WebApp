@@ -52,7 +52,7 @@ const SetUpAccountFriendRequests = React.lazy(() => import(/* webpackChunkName: 
 const ShowReminderTextToCopy = React.lazy(() => import(/* webpackChunkName: 'ShowReminderTextToCopy' */ '../../components/Remind/ShowReminderTextToCopy'));
 
 const copyPageTurnedOn = false;
-const logoColorOnWhite = '../../../img/global/svg-icons/we-vote-icon-square-color-dark.svg';
+const logoColorOnWhite = normalizedImagePath('../../../img/global/svg-icons/we-vote-icon-square-color-dark.svg');
 
 
 class RemindContactsRoot extends React.Component {

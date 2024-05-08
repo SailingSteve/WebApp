@@ -33,7 +33,7 @@ import SuggestedContactListWithController from '../Friends/SuggestedContactListW
 const AddContactsFromGoogleButton = React.lazy(() => import(/* webpackChunkName: 'AddContactsFromGoogleButton' */ '../SetUpAccount/AddContactsFromGoogleButton'));
 const MessageToFriendInputField = React.lazy(() => import(/* webpackChunkName: 'MessageToFriendInputField' */ '../Friends/MessageToFriendInputField'));
 
-const addressBookSVG = '../../../img/get-started/address-book.svg';
+const addressBookSVG = normalizedImagePath('../../../img/get-started/address-book.svg');
 
 
 class RemindContactsStart extends Component {

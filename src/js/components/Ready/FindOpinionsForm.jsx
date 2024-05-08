@@ -100,7 +100,7 @@ class FindOpinionsForm extends Component {
 
   textFieldWillBlur = () => {
     if (isAndroid()) {
-      blurTextFieldAndroid();
+      blurTextFieldAndroid('FindOptionsForm');
     } else if (isIOS()) {
       const { $ } = window;
       $("div[class^='Ready__EditAddressWrapper']").show();

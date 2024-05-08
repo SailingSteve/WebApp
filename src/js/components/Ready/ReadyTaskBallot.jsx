@@ -21,9 +21,9 @@ import {
 } from './ReadyTaskStyles';
 import ShowMoreButtons from '../Widgets/ShowMoreButtons';
 
-const ballot0Percent = '../../../img/global/svg-icons/ready/ballot-0-percent.svg';
-const ballot50Percent = '../../../img/global/svg-icons/ready/ballot-50-percent.svg';
-const ballot100Percent = '../../../img/global/svg-icons/ready/ballot-100-percent.svg';
+const ballot0Percent = normalizedImagePath('../../../img/global/svg-icons/ready/ballot-0-percent.svg');
+const ballot50Percent = normalizedImagePath('../../../img/global/svg-icons/ready/ballot-50-percent.svg');
+const ballot100Percent = normalizedImagePath('../../../img/global/svg-icons/ready/ballot-100-percent.svg');
 
 class ReadyTaskBallot extends React.Component {
   constructor (props) {

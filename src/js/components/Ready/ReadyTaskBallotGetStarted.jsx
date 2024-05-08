@@ -10,7 +10,7 @@ import {
 } from './ReadyTaskStyles';
 
 
-const ballot0Percent = '../../../img/global/svg-icons/ready/ballot-0-percent.svg';
+const ballot0Percent = normalizedImagePath('../../../img/global/svg-icons/ready/ballot-0-percent.svg');
 
 class ReadyTaskBallotGetStarted extends Component {
   constructor (props) {

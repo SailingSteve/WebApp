@@ -6,7 +6,7 @@ import normalizedImagePath from '../../utils/normalizedImagePath';
 
 const OpenExternalWebSite = React.lazy(() => import(/* webpackChunkName: 'OpenExternalWebSite' */ './OpenExternalWebSite'));
 
-const wikipediaIcon = '../../../img/global/logos/wikipedia-icon.svg';
+const wikipediaIcon = normalizedImagePath('../../../img/global/logos/wikipedia-icon.svg');
 
 
 class ViewOnWikipedia extends Component {

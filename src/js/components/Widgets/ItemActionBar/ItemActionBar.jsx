@@ -24,7 +24,7 @@ import ShareButtonDropDown from '../ShareButtonDropdown';
 import { openSnackbar } from '../../../common/components/Widgets/SnackNotifier';
 
 const NUMBER_OF_BALLOT_CHOICES_ALLOWED_BEFORE_SHOW_MODAL = 3;
-const shareIconSvg = '../../../../img/global/svg-icons/share-icon.svg';
+const shareIconSvg = normalizedImagePath('../../../../img/global/svg-icons/share-icon.svg');
 
 
 class ItemActionBar extends PureComponent {

@@ -12,7 +12,7 @@ const FriendInvitationOnboardingFriendValuesList = React.lazy(() => import(/* we
 const FriendInvitationOnboardingValuesList = React.lazy(() => import(/* webpackChunkName: 'FriendInvitationOnboardingValuesList' */ '../Values/FriendInvitationOnboardingValuesList'));
 const ImageHandler = React.lazy(() => import(/* webpackChunkName: 'ImageHandler' */ '../ImageHandler'));
 
-const logoDark = '../../../img/global/svg-icons/we-vote-logo-horizontal-color-dark-141x46.svg';
+const logoDark = normalizedImagePath('../../../img/global/svg-icons/we-vote-logo-horizontal-color-dark-141x46.svg');
 
 
 class FriendInvitationOnboardingValues extends Component {

@@ -233,8 +233,8 @@ class FilterBaseSearch extends Component {
           inputRef={(input) => { this.searchInput = input; }}
           onChange={this.handleSearch}
           value={searchText}
-          onFocus={focusTextFieldAndroid}
-          onBlur={blurTextFieldAndroid}
+          onFocus={focusTextFieldAndroid('filterBaseSearch')}
+          onBlur={blurTextFieldAndroid('filterBaseSearch')}
           placeholder="Search"
         />
         <Closer

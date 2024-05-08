@@ -19,8 +19,8 @@ import VoterStore from '../../stores/VoterStore';
 import { cordovaFooterHeight } from '../../utils/cordovaOffsets';
 
 // It's not ideal to have two images, but this is a complex svg, and I couldn't figure out how to change the fill color with a variable
-const capitalBuilding = '/img/global/svg-icons/capital-building.svg';
-const capitalBuildingSelected = '/img/global/svg-icons/capital-building-selected.svg';
+const capitalBuilding = normalizedImagePath('/img/global/svg-icons/capital-building.svg');
+const capitalBuildingSelected = normalizedImagePath('/img/global/svg-icons/capital-building-selected.svg');
 
 class FooterBar extends React.Component {
   constructor (props) {

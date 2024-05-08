@@ -281,7 +281,7 @@ class VoterPhoneVerificationEntry extends Component {
         displayPhoneVerificationButton: false,
       });
     }
-    blurTextFieldAndroid();
+    blurTextFieldAndroid('VoterPhoneVerificationEntry');
   };
 
   onCancel = () => {
@@ -316,7 +316,7 @@ class VoterPhoneVerificationEntry extends Component {
     if (isCordova() || isMobileScreenSize()) {
       this.showPhoneOnlySignInLocal();
     }
-    // focusTextFieldAndroid(); // This refers to caller string AddFriendsByEmail. Correct?
+    // focusTextFieldAndroid('VoterPhoneVerificationEntry');
   };
 
   onAnimationEndCancel = () => {

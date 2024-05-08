@@ -8,14 +8,14 @@ import apiCalming from '../../common/utils/apiCalming';
 import { formatDateToMonthDayYear } from '../../common/utils/dateFormat';
 import { renderLog } from '../../common/utils/logging';
 import normalizedImagePath from '../../common/utils/normalizedImagePath';
-import BallotStore from '../../stores/BallotStore';
 import { convertToInteger } from '../../common/utils/textFormat';
+import BallotStore from '../../stores/BallotStore';
 import HeaderLogoImage from '../Navigation/HeaderLogoImage';
 
 const ImageHandler = React.lazy(() => import(/* webpackChunkName: 'ImageHandler' */ '../ImageHandler'));
 const ReadMore = React.lazy(() => import(/* webpackChunkName: 'ReadMore' */ '../../common/components/Widgets/ReadMore'));
 
-const logoDark = '../../../img/global/svg-icons/we-vote-logo-horizontal-color-dark-141x46.svg';
+const logoDark = normalizedImagePath('../../../img/global/svg-icons/we-vote-logo-horizontal-color-dark-141x46.svg');
 
 class FriendInvitationOnboardingIntro extends Component {
   constructor (props) {

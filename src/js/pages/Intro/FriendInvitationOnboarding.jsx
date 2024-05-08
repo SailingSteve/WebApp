@@ -24,8 +24,9 @@ import FriendStore from '../../stores/FriendStore';
 import VoterStore from '../../stores/VoterStore';
 import { cordovaFooterHeight, cordovaNetworkNextButtonTop } from '../../utils/cordovaOffsets';
 
-const closeIcon = '../../../img/global/icons/x-close.png';
-const logoDark = '../../../img/global/svg-icons/we-vote-logo-horizontal-color-dark-141x46.svg';
+const closeIcon = normalizedImagePath('../../../img/global/icons/x-close.png');
+const logoDark = normalizedImagePath('../../../img/global/svg-icons/we-vote-logo-horizontal-color-dark-141x46.svg');
+
 
 // 2022-06-13 This process is being deprecated in favor of /js/pages/FriendIntro/FriendIntroLanding which leads
 //  into /js/pages/SetUpAccount/SetUpAccountRoot

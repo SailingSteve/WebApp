@@ -87,8 +87,8 @@ export default class SearchBar2024 extends Component {
           value={searchString}
           onKeyDown={this.handleKeyPress}
           onChange={this.updateResults}
-          onFocus={() => focusTextFieldAndroid('SearchBar2024')}
-          onBlur={blurTextFieldAndroid}
+          // onFocus={() => focusTextFieldAndroid('SearchBar2024')}
+          // onBlur={() => blurTextFieldAndroid('SearchBar2024')}
           onClear={this.clearQuery}
         />
       </div>

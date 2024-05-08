@@ -26,11 +26,11 @@ const WelcomeFooter = React.lazy(() => import(/* webpackChunkName: 'WelcomeFoote
 const WelcomeAppbar = React.lazy(() => import(/* webpackChunkName: 'WelcomeAppbar' */ '../components/Navigation/WelcomeAppbar'));
 // import SettingsVerifySecretCode from '../components/Settings/SettingsVerifySecretCode';
 
-const ffwdLogo = '../../img/global/logos/ffwd-logo.png';
-const googleLogo = '../../img/global/logos/google-logo.svg';
-const vipLogo = '../../img/global/logos/vip-logo-1000x208.png';
-const voteDotOrgLogo = '../../img/global/logos/vote_dot_org_logo-530x200.png';
-const welcomeForVotersImage = '../../img/welcome/WelcomeForVoters-Ballot-20190507.png';
+const ffwdLogo = normalizedImagePath('../../img/global/logos/ffwd-logo.png');
+const googleLogo = normalizedImagePath('../../img/global/logos/google-logo.svg');
+const vipLogo = normalizedImagePath('../../img/global/logos/vip-logo-1000x208.png');
+const voteDotOrgLogo = normalizedImagePath('../../img/global/logos/vote_dot_org_logo-530x200.png');
+const welcomeForVotersImage = normalizedImagePath('../../img/welcome/WelcomeForVoters-Ballot-20190507.png');
 
 
 class WelcomeForVoters extends PureComponent {

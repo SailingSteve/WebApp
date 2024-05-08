@@ -34,7 +34,7 @@ const UnsubscribeSimpleTextForModifier = React.lazy(() => import(/* webpackChunk
 const UnsubscribeThankYou = React.lazy(() => import(/* webpackChunkName: 'UnsubscribeThankYou' */ '../../components/Settings/UnsubscribeThankYou'));
 const WhatIsWeVote = React.lazy(() => import(/* webpackChunkName: 'WhatIsWeVote' */ '../../components/FriendIntro/WhatIsWeVote'));
 
-const logoColorOnWhite = '../../../img/global/svg-icons/we-vote-icon-square-color-dark.svg';
+const logoColorOnWhite = normalizedImagePath('../../../img/global/svg-icons/we-vote-icon-square-color-dark.svg');
 
 
 class UnsubscribeRoot extends React.Component {

@@ -5,7 +5,7 @@ import { renderLog } from '../../common/utils/logging';
 
 const ImageHandler = React.lazy(() => import(/* webpackChunkName: 'ImageHandler' */ '../ImageHandler'));
 
-const checkMarkIcon = '../../../img/global/svg-icons/check-mark-v2-40x43.svg';
+const checkMarkIcon = normalizedImagePath('../../../img/global/svg-icons/check-mark-v2-40x43.svg');
 
 export default class CheckBox extends Component {
   constructor (props) {

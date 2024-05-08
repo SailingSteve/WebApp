@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import normalizedImagePath from '../../common/utils/normalizedImagePath';
 
-const groupIcon = '../../../img/global/svg-icons/group-icon.svg';
+const groupIcon = normalizedImagePath('../../../img/global/svg-icons/group-icon.svg');
 
 export default class FriendsIcon extends Component {
   constructor (props) {

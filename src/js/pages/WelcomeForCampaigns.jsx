@@ -21,10 +21,10 @@ import { validateEmail } from '../utils/regex-checks';
 const WelcomeAppbar = React.lazy(() => import(/* webpackChunkName: 'WelcomeAppbar' */ '../components/Navigation/WelcomeAppbar'));
 const WelcomeFooter = React.lazy(() => import(/* webpackChunkName: 'WelcomeFooter' */ '../components/Welcome/WelcomeFooter'));
 
-const ffwdLogo = '../../img/global/logos/ffwd-logo.png';
-const googleLogo = '../../img/global/logos/google-logo.svg';
-const vipLogo = '../../img/global/logos/vip-logo-1000x208.png';
-const voteDotOrgLogo = '../../img/global/logos/vote_dot_org_logo-530x200.png';
+const ffwdLogo = normalizedImagePath('../../img/global/logos/ffwd-logo.png');
+const googleLogo = normalizedImagePath('../../img/global/logos/google-logo.svg');
+const vipLogo = normalizedImagePath('../../img/global/logos/vip-logo-1000x208.png');
+const voteDotOrgLogo = normalizedImagePath('../../img/global/logos/vote_dot_org_logo-530x200.png');
 
 class WelcomeForCampaigns extends PureComponent {
   constructor (props) {

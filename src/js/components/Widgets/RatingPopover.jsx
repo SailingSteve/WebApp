@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import normalizedImagePath from '../../common/utils/normalizedImagePath';
 import { renderLog } from '../../common/utils/logging';
 
-const downArrowColorIcon = '../../../img/global/icons/down-arrow-color-icon.svg';
-const upArrowColorIcon = '../../../img/global/icons/up-arrow-color-icon.svg';
+const downArrowColorIcon = normalizedImagePath('../../../img/global/icons/down-arrow-color-icon.svg');
+const upArrowColorIcon = normalizedImagePath('../../../img/global/icons/up-arrow-color-icon.svg');
 
 export default class RatingPopover extends Component {
   render () {

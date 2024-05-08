@@ -6,7 +6,7 @@ import InfoCircleIcon from './InfoCircleIcon';
 
 const OpenExternalWebSite = React.lazy(() => import(/* webpackChunkName: 'OpenExternalWebSite' */ '../../common/components/Widgets/OpenExternalWebSite'));
 
-const positionIcon = '../../../img/global/svg-icons/positions-icon-24-x-24.svg';
+const positionIcon = normalizedImagePath('../../../img/global/svg-icons/positions-icon-24-x-24.svg');
 
 class AddEndorsements extends Component {
   constructor (props) {

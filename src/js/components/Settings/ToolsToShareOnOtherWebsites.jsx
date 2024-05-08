@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import React, { Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
+import normalizedImagePath from '../../common/utils/normalizedImagePath';
 import cordovaScrollablePaneTopPadding from '../../utils/cordovaScrollablePaneTopPadding';
 import CodeCopier from '../Widgets/CodeCopier';
 
@@ -42,7 +43,7 @@ export default function ToolsToShareOnOtherWebsites (props) {
               title="Interactive Ballot Tool"
               sourceUrl="https://wevote.us/ballot"
               codeCopierButtonId="codeCopierInteractiveBallotTool"
-              imageUrl="/img/tools/We-Vote-Example-Ballot.png"
+              imageUrl={normalizedImagePath('/img/tools/We-Vote-Example-Ballot.png')}
               exampleUrl="https://wevote.us/more/myballot"
             />
             <CodeCopier
@@ -50,7 +51,7 @@ export default function ToolsToShareOnOtherWebsites (props) {
               title="Voter Guide Tool"
               exampleUrl="https://wevote.us/lwv_oakland"
               codeCopierButtonId="codeCopierVoterGuideTool"
-              imageUrl="/img/tools/guide.png"
+              imageUrl={normalizedImagePath('/img/tools/guide.png')}
             />
           </div>
 
@@ -68,7 +69,7 @@ export default function ToolsToShareOnOtherWebsites (props) {
               sourceUrl="https://register.vote.org/?partner=111111&campaign=free-tools"
               exampleUrl="https://wevote.us/more/register"
               codeCopierButtonId="codeCopierVoterRegistrationTool"
-              imageUrl="/img/tools/register.png"
+              imageUrl={normalizedImagePath('/img/tools/register.png')}
             />
             <CodeCopier
               externalUniqueId={props.externalUniqueId}
@@ -76,7 +77,7 @@ export default function ToolsToShareOnOtherWebsites (props) {
               sourceUrl="https://absentee.vote.org/?partner=111111&campaign=free-tools"
               exampleUrl="https://wevote.us/more/absentee"
               codeCopierButtonId="codeCopierAbsenteeBallotTool"
-              imageUrl="/img/tools/absentee.png"
+              imageUrl={normalizedImagePath('/img/tools/absentee.png')}
             />
             <CodeCopier
               externalUniqueId={props.externalUniqueId}
@@ -84,7 +85,7 @@ export default function ToolsToShareOnOtherWebsites (props) {
               sourceUrl="https://verify.vote.org/?partner=111111&campaign=free-tools"
               exampleUrl="https://wevote.us/more/verify"
               codeCopierButtonId="codeCopierCheckRegistrationStatusTool"
-              imageUrl="/img/tools/verify.png"
+              imageUrl={normalizedImagePath('/img/tools/verify.png')}
             />
             <CodeCopier
               externalUniqueId={props.externalUniqueId}
@@ -92,7 +93,7 @@ export default function ToolsToShareOnOtherWebsites (props) {
               sourceUrl="https://reminders.vote.org/?partner=111111&campaign=free-tools"
               exampleUrl="https://wevote.us/more/alerts"
               codeCopierButtonId="codeCopierElectionReminderTool"
-              imageUrl="/img/tools/reminders.png"
+              imageUrl={normalizedImagePath('/img/tools/reminders.png')}
             />
           </div>
 

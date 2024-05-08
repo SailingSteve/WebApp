@@ -28,7 +28,7 @@ const AddContactsFromGoogleButton = React.lazy(() => import(/* webpackChunkName:
 const ContactsImportedPreview = React.lazy(() => import(/* webpackChunkName: 'ContactsImportedPreview' */ './ContactsImportedPreview'));
 const SignInOptionsPanel = React.lazy(() => import(/* webpackChunkName: 'SignInOptionsPanel' */ '../../common/components/SignIn/SignInOptionsPanel'));
 
-const addressBookSVG = '../../../img/get-started/address-book.svg';
+const addressBookSVG = normalizedImagePath('../../../img/get-started/address-book.svg');
 
 
 class FindFriendsStart extends Component {

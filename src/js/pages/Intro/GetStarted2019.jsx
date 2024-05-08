@@ -9,7 +9,7 @@ import normalizedImagePath from '../../common/utils/normalizedImagePath';
 import historyPush from '../../common/utils/historyPush';
 import { renderLog } from '../../common/utils/logging';
 
-const closeIcon = '../../../img/global/icons/x-close.png';
+const closeIcon = normalizedImagePath('../../../img/global/icons/x-close.png');
 
 
 export default class GetStarted2019 extends Component {

@@ -700,9 +700,9 @@ export function focusTextFieldAndroid (clue) {
   }
 }
 
-export function blurTextFieldAndroid () {
+export function blurTextFieldAndroid (clue) {
   if (isAndroid()) {
-    restoreStylesAfterCordovaKeyboard('AddFriendsByEmail');
+    restoreStylesAfterCordovaKeyboard(clue || 'clueless');
   }
 }
 

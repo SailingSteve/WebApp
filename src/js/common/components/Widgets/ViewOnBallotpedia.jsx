@@ -6,7 +6,7 @@ import normalizedImagePath from '../../utils/normalizedImagePath';
 
 const OpenExternalWebSite = React.lazy(() => import(/* webpackChunkName: 'OpenExternalWebSite' */ './OpenExternalWebSite'));
 
-const ballotpediaIcon = '../../../img/global/logos/ballotpedia-initials-57x33.png';
+const ballotpediaIcon = normalizedImagePath('../../../img/global/logos/ballotpedia-initials-57x33.png');
 
 
 class ViewOnBallotpedia extends Component {

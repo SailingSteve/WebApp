@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import normalizedImagePath from '../common/utils/normalizedImagePath';
 import { renderLog } from '../common/utils/logging';
 
-const avatarGenericIcon = '../../img/global/svg-icons/avatar-generic.svg';
-const issueGenericIcon = '../../img/global/svg-icons/issue-generic.svg';
-const issuePhotoGenericIcon = '../../img/global/svg-icons/issue-photo-generic.svg';
-const organizationIcon = '../../img/global/svg-icons/organization-icon.svg';
+const avatarGenericIcon = normalizedImagePath('../../img/global/svg-icons/avatar-generic.svg');
+const issueGenericIcon = normalizedImagePath('../../img/global/svg-icons/issue-generic.svg');
+const issuePhotoGenericIcon = normalizedImagePath('../../img/global/svg-icons/issue-photo-generic.svg');
+const organizationIcon = normalizedImagePath('../../img/global/svg-icons/organization-icon.svg');
 
 export default class ImageHandler extends Component {
   constructor (props) {
