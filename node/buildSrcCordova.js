@@ -94,6 +94,8 @@ function fileRewriterForCordova (path, versions) {
     // Remove all lazy loading
     newValue = newValue.replace(/(?:const )(.*?)\s(?:.*?\*\/)(.*?)\)\);$/gim,
       'import $1 from $2;  // rewritten from lazy');
+    newValue = newValue.replace(/(?:const )(.*?)\s=\sReact.lazy.*?'\.(.*?)'.*?$/gim,
+      'import $1 from \'.$2\';  // rewritten from lazy w/o webpackChunkName ');
     // Crash  out on multi-line Suspense
     const regex = /.*?<Suspense fallback={\(\n/;
     // console.log(path, newValue.match(regex));
@@ -113,7 +115,7 @@ function fileRewriterForCordova (path, versions) {
     newValue = newValue.replace(/^(\s*)(<Suspense.*?)(\n)/gim, '$1<>$3');
     newValue = newValue.replace(/^(\s*)(<\/Suspense>)(\n)/gim, '$1</>$3');
     // Remove all DelayedLoad mark up
-    newValue = newValue.replace(/(<[/]?DelayedLoad.*?>)/gim, '');
+    newValue = newValue.replace(/<(\/)?DelayedLoad.*?>/gim, '<$1>');
     // Replace "initializeMoment" everywhere
     newValue = newValue.replace(/initializeMoment/gim, 'initializeMomentCordova');
     // Inject cordova startup in index.jsx, replace "importStartCordovaToken" etc
@@ -224,7 +226,7 @@ Debugging command line node, See https://nodejs.org/en/docs/inspector
  1) In Chrome, chrome://inspect/#devices
  2) Click on "Open dedicated DevTools for Node"
  3) in the terminal:
-      stevepodell@Steves-MacBook-Pro-32GB-Oct-2109 src % node --inspect-brk ./buildSrcCordova.js
+      stevepodell@Steves-MacBook-Pro-32GB-Oct-2109 src % node --inspect-brk ./node/buildSrcCordova.js
  4) and it opens in the chrome debugger
 
  To lint the srcCordova dir

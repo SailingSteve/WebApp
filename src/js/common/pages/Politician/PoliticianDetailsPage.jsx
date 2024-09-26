@@ -7,42 +7,36 @@ import React, { Component, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import DesignTokenColors from '../../components/Style/DesignTokenColors';
-import { PageContentContainer } from '../../../components/Style/pageLayoutStyles';
-import webAppConfig from '../../../config';
 import AnalyticsActions from '../../../actions/AnalyticsActions';
 import BallotActions from '../../../actions/BallotActions';
 import OrganizationActions from '../../../actions/OrganizationActions';
 import SupportActions from '../../../actions/SupportActions';
-import RepresentativeStore from '../../../stores/RepresentativeStore';
-import BallotStore from '../../../stores/BallotStore';
-import CampaignSupporterStore from '../../stores/CampaignSupporterStore';
-import CandidateStore from '../../../stores/CandidateStore';
-import OfficeHeldStore from '../../stores/OfficeHeldStore';
-import PoliticianStore from '../../stores/PoliticianStore';
 import OfficeItemCompressed from '../../../components/Ballot/OfficeItemCompressed';
 import PoliticianCardForList from '../../../components/PoliticianListRoot/PoliticianCardForList';
+import { Candidate, CandidateNameAndPartyWrapper, CandidateNameH4, CandidateParty, CandidateTopRow } from '../../../components/Style/BallotStyles';
+import { PageContentContainer } from '../../../components/Style/pageLayoutStyles';
+import webAppConfig from '../../../config';
+import BallotStore from '../../../stores/BallotStore';
+import CandidateStore from '../../../stores/CandidateStore';
+import RepresentativeStore from '../../../stores/RepresentativeStore';
+import { headroomWrapperOffset } from '../../../utils/cordovaCalculatedOffsets';
+import { cordovaBallotFilterTopMargin } from '../../../utils/cordovaOffsets';
+import { getPageKey } from '../../../utils/cordovaPageUtils';
 import CampaignChipInLink from '../../components/Campaign/CampaignChipInLink';
 import CampaignOwnersList from '../../components/CampaignSupport/CampaignOwnersList';
 import CompleteYourProfileModalController from '../../components/Settings/CompleteYourProfileModalController';
-import { Candidate, CandidateNameH4, CandidateNameAndPartyWrapper, CandidateParty, CandidateTopRow } from '../../../components/Style/BallotStyles';
-import {
-  CampaignDescription, CampaignDescriptionDesktop, CampaignDescriptionDesktopWrapper, CampaignDescriptionWrapper,
-  // CampaignImageDesktopWrapper, CampaignImageMobileWrapper, CampaignImagePlaceholder, CampaignImagePlaceholderText,
-  CampaignOwnersDesktopWrapper, CampaignSubSectionSeeAll, CampaignSubSectionTitle, CampaignSubSectionTitleWrapper, // CampaignTitleAndScoreBar,
-  CommentsListWrapper, DetailsSectionDesktopTablet, DetailsSectionMobile, OtherElectionsWrapper, SupportButtonFooterWrapperAboveFooterButtons, SupportButtonPanel,
-} from '../../components/Style/CampaignDetailsStyles';
+import { CampaignDescription, CampaignDescriptionDesktop, CampaignDescriptionDesktopWrapper, CampaignDescriptionWrapper, CampaignOwnersDesktopWrapper, CampaignSubSectionSeeAll, CampaignSubSectionTitle, CampaignSubSectionTitleWrapper, CommentsListWrapper, DetailsSectionDesktopTablet, DetailsSectionMobile, OtherElectionsWrapper, SupportButtonFooterWrapperAboveFooterButtons, SupportButtonPanel, } from '../../components/Style/CampaignDetailsStyles';
 import { EditIndicator, IndicatorButtonWrapper, IndicatorRow } from '../../components/Style/CampaignIndicatorStyles';
-import {
-  CandidateCampaignListDesktop, CandidateCampaignListMobile, CandidateCampaignWrapper,
-  // OfficeHeldNameDesktop, OfficeHeldNameMobile, PoliticianImageDesktop, PoliticianImageDesktopPlaceholder, PoliticianImageMobile, PoliticianImageMobilePlaceholder, PoliticianNameDesktop, PoliticianNameMobile, PoliticianNameOuterWrapperDesktop,
-  SectionTitleSimple,
-} from '../../components/Style/PoliticianDetailsStyles';
+import DesignTokenColors from '../../components/Style/DesignTokenColors';
+import { CandidateCampaignListDesktop, CandidateCampaignListMobile, CandidateCampaignWrapper, SectionTitleSimple, } from '../../components/Style/PoliticianDetailsStyles';
+import standardBoxShadow from '../../components/Style/standardBoxShadow';
 import { PageWrapper } from '../../components/Style/stepDisplayStyles';
 import DelayedLoad from '../../components/Widgets/DelayedLoad';
 import LinkToAdminTools from '../../components/Widgets/LinkToAdminTools';
-// import OfficeHeldNameText from '../../components/Widgets/OfficeHeldNameText';
 import AppObservableStore, { messageService } from '../../stores/AppObservableStore';
+import CampaignSupporterStore from '../../stores/CampaignSupporterStore';
+import OfficeHeldStore from '../../stores/OfficeHeldStore';
+import PoliticianStore from '../../stores/PoliticianStore';
 import { convertStateCodeToStateText } from '../../utils/addressFunctions';
 import apiCalming from '../../utils/apiCalming';
 import { getYearFromUltimateElectionDate } from '../../utils/dateFormat';
@@ -50,22 +44,16 @@ import historyPush from '../../utils/historyPush';
 import { isCordova, isWebApp } from '../../utils/isCordovaOrWebApp';
 import keepHelpingDestination from '../../utils/keepHelpingDestination';
 import { cordovaOffsetLog, renderLog } from '../../utils/logging';
+import normalizedImagePath from '../../utils/normalizedImagePath';
 import { getPoliticianValuesFromIdentifiers, retrievePoliticianFromIdentifiersIfNeeded } from '../../utils/politicianUtils';
 import returnFirstXWords from '../../utils/returnFirstXWords';
 import saveCampaignSupportAndGoToNextPage from '../../utils/saveCampaignSupportAndGoToNextPage';
-import standardBoxShadow from '../../components/Style/standardBoxShadow';
-import { cordovaBallotFilterTopMargin } from '../../../utils/cordovaOffsets';
-import { headroomWrapperOffset } from '../../../utils/cordovaCalculatedOffsets';
-import { getPageKey } from '../../../utils/cordovaPageUtils';
-import normalizedImagePath from '../../utils/normalizedImagePath';
 
-// const CampaignCommentsList = React.lazy(() => import(/* webpackChunkName: 'CampaignCommentsList' */ '../../components/Campaign/CampaignCommentsList'));
 const CampaignRetrieveController = React.lazy(() => import(/* webpackChunkName: 'CampaignRetrieveController' */ '../../components/Campaign/CampaignRetrieveController'));
 const CampaignSupportThermometer = React.lazy(() => import(/* webpackChunkName: 'CampaignSupportThermometer' */ '../../components/CampaignSupport/CampaignSupportThermometer'));
 const CampaignNewsItemList = React.lazy(() => import(/* webpackChunkName: 'CampaignNewsItemList' */ '../../components/Campaign/CampaignNewsItemList'));
 const CampaignShareChunk = React.lazy(() => import(/* webpackChunkName: 'CampaignShareChunk' */ '../../components/Campaign/CampaignShareChunk'));
 const ImageHandler = React.lazy(() => import(/* webpackChunkName: 'ImageHandler' */ '../../../components/ImageHandler'));
-// const ItemActionBar = React.lazy(() => import(/* webpackChunkName: 'ItemActionBar' */ '../../../components/Widgets/ItemActionBar/ItemActionBar'));
 const OfficeNameText = React.lazy(() => import(/* webpackChunkName: 'OfficeNameText' */ '../../components/Widgets/OfficeNameText'));
 const PoliticianEndorsementsList = React.lazy(() => import(/* webpackChunkName: 'PoliticianEndorsementsList' */ '../../components/Politician/PoliticianEndorsementsList'));
 const PoliticianLinks = React.lazy(() => import(/* webpackChunkName: 'PolitianLinks' */ '../../components/Politician/PoliticianLinks'));
@@ -853,38 +841,6 @@ class PoliticianDetailsPage extends Component {
         </CommentsListWrapper>
       );
     }
-    // let commentListTeaserHtml = <></>;
-    // if (supporterEndorsementsWithText && supporterEndorsementsWithText.length > 0) {
-    //   commentListTeaserHtml = (
-    //     <CommentsListWrapper>
-    //       <DelayedLoad waitBeforeShow={loadSlow ? 1500 : 0}>
-    //         <Suspense fallback={<span>&nbsp;</span>}>
-    //           <CampaignSubSectionTitleWrapper>
-    //             <CampaignSubSectionTitle>
-    //               Reasons for supporting
-    //             </CampaignSubSectionTitle>
-    //             {!!(this.getCampaignXBasePath()) && (
-    //               <CampaignSubSectionSeeAll>
-    //                 <Link
-    //                   to={`${this.getCampaignXBasePath()}comments`}
-    //                   className="u-link-color"
-    //                 >
-    //                   See all
-    //                 </Link>
-    //               </CampaignSubSectionSeeAll>
-    //             )}
-    //           </CampaignSubSectionTitleWrapper>
-    //           <CampaignCommentsList
-    //             campaignXWeVoteId={linkedCampaignXWeVoteId}
-    //             politicianWeVoteId={politicianWeVoteIdForDisplay}
-    //             removePoliticianEndorsements
-    //             startingNumberOfCommentsToDisplay={2}
-    //           />
-    //         </Suspense>
-    //       </DelayedLoad>
-    //     </CommentsListWrapper>
-    //   );
-    // }
     const pigsCanFly = false;
     return (
       <PageContentContainer>
@@ -1385,10 +1341,10 @@ const MissingPoliticianText = styled('p')(({ theme }) => (`
 `));
 
 const slideIn = keyframes`
-  from { 
+  from {
     transform: translateY(-100%);
   }
-  to { 
+  to {
     transform: translateY(0);
   }
 `;

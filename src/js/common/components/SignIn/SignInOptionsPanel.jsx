@@ -624,7 +624,7 @@ export default class SignInOptionsPanel extends Component {
             </div>
             )}
             <TermsWrapper>
-              By continuing, you accept WeVote.US’s 
+              By continuing, you accept WeVote.US’s
               <Suspense fallback={<></>}>
                 <OpenExternalWebSite
                   linkIdAttribute="openTermsOfService"
@@ -637,8 +637,8 @@ export default class SignInOptionsPanel extends Component {
                     </span>
                   )}
                 />
-              </Suspense> 
-              and 
+              </Suspense>
+              and
               <Suspense fallback={<></>}>
                 <OpenExternalWebSite
                   linkIdAttribute="openPrivacyPolicy"
@@ -651,9 +651,9 @@ export default class SignInOptionsPanel extends Component {
                     </span>
                   )}
                 />
-              </Suspense> 
+              </Suspense>
               .
-              </TermsWrapper>
+            </TermsWrapper>
           </Main>
         </SignInOptionsPanelWrapper>
       </>

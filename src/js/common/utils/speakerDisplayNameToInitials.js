@@ -1,7 +1,8 @@
 import speakerDisplayNameToAvatarColor from './speakerDisplayNameToAvatarColor';
 
 function speakerDisplayNameToInitials (speakerDisplayName) {
-  const nameParts = speakerDisplayName.split(' ');
+  const nameParts = speakerDisplayName ? speakerDisplayName.split(' ') : '- -'.split(' ');
+
   const initials =
     nameParts.length > 1 ?
       `${nameParts[0][0]}${nameParts[1][0]}` :

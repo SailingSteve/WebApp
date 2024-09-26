@@ -12,6 +12,7 @@ import OrganizationActions from '../../actions/OrganizationActions';
 import ReactionActions from '../../actions/ReactionActions';
 import LoadingWheel from '../../common/components/Widgets/LoadingWheel';
 import LoadingWheelComp from '../../common/components/Widgets/LoadingWheelComp';
+import AppObservableStore from '../../common/stores/AppObservableStore';
 import apiCalming from '../../common/utils/apiCalming';
 import { isIPad } from '../../common/utils/cordovaUtils';
 import { formatDateToMonthDayYear, timeFromDate } from '../../common/utils/dateFormat';
@@ -31,7 +32,6 @@ import TwitterSignInCard from '../../components/Twitter/TwitterSignInCard';
 import BrowserPushMessage from '../../components/Widgets/BrowserPushMessage';
 import Testimonial from '../../components/Widgets/Testimonial';
 import ActivityStore from '../../stores/ActivityStore';
-import AppObservableStore from '../../common/stores/AppObservableStore';
 import BallotStore from '../../stores/BallotStore';
 import OrganizationStore from '../../stores/OrganizationStore';
 import VoterStore from '../../stores/VoterStore';
@@ -44,7 +44,6 @@ const ActivityTidbitAddReaction = React.lazy(() => import(/* webpackChunkName: '
 const ActivityTidbitComments = React.lazy(() => import(/* webpackChunkName: 'ActivityTidbitComments' */ '../../components/Activity/ActivityTidbitComments'));
 const ActivityTidbitItem = React.lazy(() => import(/* webpackChunkName: 'ActivityTidbitItem' */ '../../components/Activity/ActivityTidbitItem'));
 const ActivityTidbitReactionsSummary = React.lazy(() => import(/* webpackChunkName: 'ActivityTidbitReactionsSummary' */ '../../components/Activity/ActivityTidbitReactionsSummary'));
-// const DelayedLoad = React.lazy(() => import(/* webpackChunkName: 'DelayedLoad' */ '../../components/Widgets/DelayedLoad'));
 const FirstAndLastNameRequiredAlert = React.lazy(() => import(/* webpackChunkName: 'FirstAndLastNameRequiredAlert' */ '../../components/Widgets/FirstAndLastNameRequiredAlert'));
 const SignInOptionsPanel = React.lazy(() => import(/* webpackChunkName: 'SignInOptionsPanel' */ '../../common/components/SignIn/SignInOptionsPanel'));
 const ShowMoreItems = React.lazy(() => import(/* webpackChunkName: 'ShowMoreItems' */ '../../components/Widgets/ShowMoreItems'));
@@ -397,7 +396,6 @@ class News extends Component {
                     )}
                   </>
                   {(voterIsSignedIn && dateVoterJoined) && (
-                    // <DelayedLoad waitBeforeShow={1000}>
                     <Card className="card" style={unsetMarginsIfCordova}>
                       <div className="card-main" style={unsetMarginsIfCordova}>
                         <DateVoterJoinedWrapper>
@@ -423,21 +421,25 @@ class News extends Component {
                     // </DelayedLoad>
                   )}
                   {voterIsSignedIn && (
-                    <AddFriendsMobileWrapper className="u-show-mobile" style={unsetSideMarginsIfCordova}>
-                      <SuggestedFriendsPreview inSideColumn />
-                    </AddFriendsMobileWrapper>
+                    <div className="u-show-mobile">
+                      <AddFriendsMobileWrapper style={unsetSideMarginsIfCordova}>
+                        <SuggestedFriendsPreview inSideColumn />
+                      </AddFriendsMobileWrapper>
+                    </div>
                   )}
                   {voterIsSignedIn && (
-                    <div className="card u-show-mobile" style={unsetSideMarginsIfCordova}>
-                      <AddFriendsMobileWrapper className="card-main" style={unsetMarginsIfCordova}>
-                        <SectionTitle>
-                          Voting Is Better with Friends
-                        </SectionTitle>
-                        <SectionDescription>
-                          Add friends you feel comfortable talking politics with. Hear about upcoming elections and what you can do to get ready to vote.
-                        </SectionDescription>
-                        <AddFriendsByEmail inSideColumn uniqueExternalId="mobile" />
-                      </AddFriendsMobileWrapper>
+                    <div className="card u-show-mobile">
+                      <div style={unsetSideMarginsIfCordova}>
+                        <AddFriendsMobileWrapper className="card-main" style={unsetMarginsIfCordova}>
+                          <SectionTitle>
+                            Voting Is Better with Friends
+                          </SectionTitle>
+                          <SectionDescription>
+                            Add friends you feel comfortable talking politics with. Hear about upcoming elections and what you can do to get ready to vote.
+                          </SectionDescription>
+                          <AddFriendsByEmail inSideColumn uniqueExternalId="mobile" />
+                        </AddFriendsMobileWrapper>
+                      </div>
                     </div>
                   )}
                   {!voterIsSignedIn && (

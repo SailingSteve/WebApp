@@ -25,7 +25,8 @@ import { openSnackbar } from '../../../common/components/Widgets/SnackNotifier';
 import DesignTokenColors from '../../../common/components/Style/DesignTokenColors';
 import PositionStatementModal from '../PositionStatementModal'; // eslint-disable-line import/no-cycle
 
-const HelpWinOrDefeatModal = React.lazy(() => import(/* webpackChunkName: 'HelpWinOrDefeatModal' */ '../../../common/components/CampaignSupport/HelpWinOrDefeatModal')); // eslint-disable-line import/no-cycle
+/* eslint-disable import/no-cycle */
+const HelpWinOrDefeatModal = React.lazy(() => import(/* webpackChunkName: 'HelpWinOrDefeatModal' */ '../../../common/components/CampaignSupport/HelpWinOrDefeatModal'));
 
 const NUMBER_OF_BALLOT_CHOICES_ALLOWED_BEFORE_SHOW_MODAL = 3;
 const shareIconSvg = '../../../../img/global/svg-icons/share-icon.svg';
