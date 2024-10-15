@@ -200,6 +200,10 @@ class OrganizationModal extends Component {
   componentWillUnmount () {
     this.candidateStoreListener.remove();
     this.measureStoreListener.remove();
+    const drawer = document.querySelector('.MuiDrawer-paper');
+    if (drawer) {
+      drawer.removeListeners();
+    }
     AppObservableStore.setScrolledDownDrawer(false);
   }
 

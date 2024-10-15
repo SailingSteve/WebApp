@@ -9,7 +9,8 @@ import ReadyActions from '../actions/ReadyActions';
 import AppObservableStore, { messageService } from '../common/stores/AppObservableStore';
 import apiCalming from '../common/utils/apiCalming';
 import historyPush from '../common/utils/historyPush';
-import { isAndroid, isWebApp } from '../common/utils/isCordovaOrWebApp';
+import { isAndroid, isCordova, isWebApp } from '../common/utils/isCordovaOrWebApp';
+import isMobileScreenSize from '../common/utils/isMobileScreenSize';
 import { renderLog } from '../common/utils/logging';
 import ReadyFinePrint from '../components/Ready/ReadyFinePrint';
 import ReadyIntroduction from '../components/Ready/ReadyIntroduction';
@@ -126,7 +127,7 @@ class ReadyLight extends Component {
                 </Suspense>
               </ElectionCountdownInnerWrapper>
             </ElectionCountdownOuterWrapper>
-            <ViewBallotButtonWrapper className="col-12">
+            <ViewBallotButtonWrapper className="col-12" style={isCordova() || isMobileScreenSize() ? { paddingTop: '18px' } : {}}>
               <Suspense fallback={<></>}>
                 <ViewUpcomingBallotButton onClickFunction={this.goToBallot} onlyOfferViewYourBallot />
               </Suspense>
